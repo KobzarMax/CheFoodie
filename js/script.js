@@ -363,12 +363,39 @@ $(document).ready(function(){
 
 
 const burger = document.querySelector('.menu-icon')
+const mobileNav = document.querySelector('.mobile-nav');
 
 if (burger) {
-	const mobileNav = document.querySelector('.mobile-nav');
+
 	burger.addEventListener("click", function(e) {
 		burger.classList.toggle("_active");
 		mobileNav.classList.toggle("_active");
 		document.body.classList.toggle("_lock")
 	})
+}
+
+
+
+
+
+
+const logInButton = document.querySelector('.log-in-menu-icon')
+
+const logInForm = document.querySelector('.log-in-form-container');
+
+function openForm(){
+	if (burger.classList.contains('_active')){
+        burger.classList.toggle("_active");
+		mobileNav.classList.toggle("_active");
+		document.body.classList.toggle("_lock");
+        setTimeout(formLog(),300);
+    } else {
+        formLog();
+    }
+}
+
+function formLog() {
+    logInButton.classList.toggle("_log-in-active");
+	logInForm.classList.toggle("_log-in-active");
+	document.body.classList.toggle("_lock");
 }
