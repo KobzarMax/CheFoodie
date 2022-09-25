@@ -326,6 +326,48 @@ $(document).ready(function(){
         arrows: true,
         zIndex: 1,
         prevArrow: '<button class="slide-arrow prev-arrow bg-dark_blue text-font_white w-8 h-8 rounded-[50%] flex items-center justify-center"><i class="fa-solid fa-angle-right"></i></button>',
-        nextArrow: '<button class="slide-arrow next-arrow bg-light_blue text-font_white w-8 h-8 rounded-[50%] flex items-center justify-center"><i class="fa-solid fa-angle-left"></i></button>'
+        nextArrow: '<button class="slide-arrow next-arrow bg-light_blue text-font_white w-8 h-8 rounded-[50%] flex items-center justify-center"><i class="fa-solid fa-angle-left"></i></button>',
+		responsive: [
+			{
+			  breakpoint: 992,
+			  settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				infinite: true,
+			  },
+			},
+		]
       });
 });
+
+
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+
+
+const burger = document.querySelector('.menu-icon')
+
+if (burger) {
+	const mobileNav = document.querySelector('.mobile-nav');
+	burger.addEventListener("click", function(e) {
+		burger.classList.toggle("_active")
+		mobileNav.classList.toggle("_active")
+	})
+}

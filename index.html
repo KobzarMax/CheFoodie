@@ -21,6 +21,34 @@
                         <div class="img-wrapper">
                             <img class="logo-image" src="./assets/images/logo.svg" alt="logo-image">
                         </div>
+                        <div class="menu-icon">
+                            <span></span>
+                        </div>
+                        <div class="mobile-nav">
+                            <div class="button-wrapper">
+                                <div class="js">
+                                    <div class="language-picker js-language-picker" data-trigger-class="btn btn--subtle">
+                                    <form action="" class="language-picker__form">
+                                      <label for="language-picker-select">Select your language</label>
+                                      <select name="language-picker-select" id="language-picker-select">
+                                        <option lang="en" value="english" selected>English</option>
+                                        <option lang="es" value="spanish">Spanish</option>
+                                        <option lang="br" value="portuguese">Portuguese</option>
+                                      </select>
+                                    </form>
+                                  </div>
+                                </div>
+                            </div>
+                            <nav class="nav">
+                                <ul class="nav-list">
+                                    <li class="nav-list-item"><a href="#" class="nav-list-link">Features</a></li>
+                                    <li class="nav-list-item"><a href="#" class="nav-list-link">Benefits</a></li>
+                                    <li class="nav-list-item"><a href="#" class="nav-list-link">Feedbacks</a></li>
+                                    <li class="nav-list-item"><a href="#" class="nav-list-link">Contact</a></li>
+                                </ul>
+                            </nav>
+                            <button class="button logIn-button">Log In</button>
+                        </div>
                         <nav class="nav">
                             <ul class="nav-list">
                                 <li class="nav-list-item"><a href="#" class="nav-list-link">Features</a></li>
@@ -237,10 +265,23 @@
                 Or You can leave message here:
             </div>
             <div class="form-wrapper">
-                <form class="form">
-                    <input type="text" class="input" placeholder="Your Name">
-                    <input type="email" class="input" placeholder="Your Email">
-                    <input name="textarea" id="textarea" class="input" placeholder="Message"></input>
+                <form class="form need-validation">
+                    <div class="input-wrapper">
+                        <input id="name" required name="name" type="text" class="input" placeholder="Your Name">
+                        <label id="labelname" for="name">Your name</label>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <input id="email" required name="email" type="email" class="input" placeholder="Your Email">
+                        <label id="labelemail" for="email">Your Email</label>
+                    </div>
+
+                    <div class="input-wrapper">
+                        
+                        <input required name="textarea" id="textarea" class="input" placeholder="Message"></input>
+                        <label id="labelmess" for="textarea">Message</label>
+                    </div>
+                    
                     <button class="button form-button">
                         Send the Message
                     </button>
