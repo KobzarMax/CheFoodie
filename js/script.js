@@ -367,7 +367,8 @@ const burger = document.querySelector('.menu-icon')
 if (burger) {
 	const mobileNav = document.querySelector('.mobile-nav');
 	burger.addEventListener("click", function(e) {
-		burger.classList.toggle("_active")
-		mobileNav.classList.toggle("_active")
+		burger.classList.toggle("_active");
+		mobileNav.classList.toggle("_active");
+		document.body.classList.toggle("_lock")
 	})
 }
