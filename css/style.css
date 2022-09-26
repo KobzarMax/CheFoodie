@@ -765,6 +765,9 @@ input, select, option {
 .display {
     display: none;
 }
+.language-picker__item[aria-selected=true]::after {
+    background-image: none;
+}
 
 
 @media (max-width: 1200px) {
@@ -881,7 +884,7 @@ input, select, option {
     }
     .slick-arrow{
         position: absolute;
-        bottom: 23%;
+        bottom: 23.5%;
         z-index: 10;
         border: none;
         background-color: transparent;
