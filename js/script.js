@@ -376,12 +376,13 @@ if (burger) {
 
 
 
-
-
-
 const logInButton = document.querySelector('.log-in-menu-icon')
 
+const singUpButton = document.querySelector('.sign-up-button')
+
 const logInForm = document.querySelector('.log-in-form-container');
+
+const singUpForm = document.querySelector('.sign-up-form-container');
 
 function openForm(){
 	if (burger.classList.contains('_active')){
@@ -391,6 +392,7 @@ function openForm(){
         setTimeout(formLog(),300);
     } else {
         formLog();
+        formSingUp();
     }
 }
 
@@ -398,4 +400,28 @@ function formLog() {
     logInButton.classList.toggle("_log-in-active");
 	logInForm.classList.toggle("_log-in-active");
 	document.body.classList.toggle("_lock");
+}
+
+function formSingUp() {
+    singUpButton.classList.toggle("_log-in-active");
+	singUpForm.classList.toggle("_log-in-active");
+	document.body.classList.toggle("_lock");
+}
+
+const privacyBlock = document.querySelector(".privacy")
+const mainBlock = document.querySelector(".main")
+
+
+function openPrivacy() {
+    privacyBlock.classList.toggle("_privacy-active");
+    mainBlock.classList.toggle("display")
+}
+
+const conditionsBlock = document.querySelector(".conditions")
+
+
+function openConditions() {
+    conditionsBlock.classList.toggle("_conditions-active");
+    mainBlock.classList.toggle("display")
+
 }
