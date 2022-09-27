@@ -2582,19 +2582,28 @@ u {
         --component-padding: 1.25rem;
         --component-padding: var(--space-md);
         font-size: 1rem;
-        visibility: hidden;
-        opacity: 0;
         transition: visibility 0s .2s, opacity .2s, -webkit-transform .2s ease-out;
         transition: visibility 0s .2s, opacity .2s, transform .2s ease-out;
         transition: visibility 0s .2s, opacity .2s, transform .2s ease-out, -webkit-transform .2s ease-out
+    }
+
+    .language-picker__button[aria-expanded=false]+.language-picker__dropdown {
+        visibility: visible;
+        opacity: 1;
+        -webkit-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        transform: translateX(100%);
+        transition: opacity .2s, -webkit-transform .2s ease-out;
+        transition: opacity .2s, transform .2s ease-out;
+        transition: opacity .2s, transform .2s ease-out, -webkit-transform .2s ease-out
     }
     
     .language-picker__button[aria-expanded=true]+.language-picker__dropdown {
         visibility: visible;
         opacity: 1;
-        -webkit-transform: translateY(4px);
-        -ms-transform: translateY(4px);
-        transform: translateY(4px);
+        -webkit-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+        transform: translateX(0%);
         transition: opacity .2s, -webkit-transform .2s ease-out;
         transition: opacity .2s, transform .2s ease-out;
         transition: opacity .2s, transform .2s ease-out, -webkit-transform .2s ease-out

@@ -355,10 +355,6 @@ if (burger) {
 
 
 
-const logInButton = document.querySelector('.log-in-menu-icon')
-
-const singUpButton = document.querySelector('.sign-up-button')
-
 const logInForm = document.querySelector('.log-in-form-container');
 
 const singUpForm = document.querySelector('.sign-up-form-container');
@@ -384,8 +380,6 @@ const bodyLockClass = document.body
 const openLogIn = logInForm.classList.contains("._log-in-active");
 
 function formLog() {
-
-    logInButton.classList.toggle("_log-in-active");
 	logInForm.classList.toggle("_log-in-active");
 	
     
@@ -401,7 +395,6 @@ function formLog() {
 }
 
 function formSingUp() {
-    singUpButton.classList.toggle("_log-in-active");
 	singUpForm.classList.toggle("_log-in-active");
     
     if(!blurClass) {
@@ -416,27 +409,48 @@ function formSingUp() {
 }
 
 function redirectForm() {
-    singUpButton.classList.toggle("_log-in-active");
+    logInForm.classList.toggle("_log-in-active");
 	singUpForm.classList.toggle("_log-in-active");
+
 }
 
-const privacyBlock = document.querySelector(".privacy")
+const privacyBlock = document.querySelector(".privacy");
 
-
+const conditionsBlock = document.querySelector(".conditions");
 
 function openPrivacy() {
+    if (conditionsBlock.classList.contains("_conditions-active")) {
+        openConditions();
+    }
     privacyBlock.classList.toggle("_privacy-active");
     mainBlock.classList.toggle("display")
-}
 
-const conditionsBlock = document.querySelector(".conditions")
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+}
 
 
 function openConditions() {
+    if (privacyBlock.classList.contains("_privacy-active")) {
+        openPrivacy();
+    }
     conditionsBlock.classList.toggle("_conditions-active");
     mainBlock.classList.toggle("display")
 
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+
 }
+
+//refresh 
+
+function resreshPage() {
+    conditionsBlock.classList.remove("_conditions-active");
+    privacyBlock.classList.remove("_privacy-active");
+    mainBlock.classList.remove("display")
+
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+}
+
+
 
 const header = document.querySelector('.header')
 
