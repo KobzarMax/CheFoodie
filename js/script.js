@@ -392,24 +392,55 @@ function openForm(){
         setTimeout(formLog(),300);
     } else {
         formLog();
-        formSingUp();
     }
 }
 
+const mainBlock = document.querySelector(".main")
+const footerBlock = document.querySelector(".footer")
+const headNavBlock = document.querySelector(".head");
+const blurClass = mainBlock.classList.contains("blur")
+
+const bodyLockClass = document.body
+
 function formLog() {
+
     logInButton.classList.toggle("_log-in-active");
 	logInForm.classList.toggle("_log-in-active");
-	document.body.classList.toggle("_lock");
+	
+    
+    if(!blurClass) {
+        mainBlock.classList.toggle("blur");
+        footerBlock.classList.toggle("blur");
+        headNavBlock.classList.toggle("blur");
+        bodyLockClass.classList.toggle("_lock");
+    } else {
+        return;
+    }
+    
 }
 
 function formSingUp() {
     singUpButton.classList.toggle("_log-in-active");
 	singUpForm.classList.toggle("_log-in-active");
-	document.body.classList.toggle("_lock");
+    
+    if(!blurClass) {
+        mainBlock.classList.toggle("blur");
+        footerBlock.classList.toggle("blur");
+        headNavBlock.classList.toggle("blur");
+        bodyLockClass.classList.toggle("_lock");
+    } else {
+        return;
+    }
+
+}
+
+function redirectForm() {
+    singUpButton.classList.toggle("_log-in-active");
+	singUpForm.classList.toggle("_log-in-active");
 }
 
 const privacyBlock = document.querySelector(".privacy")
-const mainBlock = document.querySelector(".main")
+
 
 
 function openPrivacy() {
@@ -424,4 +455,19 @@ function openConditions() {
     conditionsBlock.classList.toggle("_conditions-active");
     mainBlock.classList.toggle("display")
 
+}
+
+const header = document.querySelector('.header')
+
+document.addEventListener('scroll', animateNavnarOnScroll)
+
+function animateNavnarOnScroll() {
+  let totalHeight = header.clientHeight
+  if (window.scrollY >= totalHeight) {
+    header.classList.add("sticky");
+    header.classList.add("top-0");
+  } else {
+    header.classList.remove("sticky");
+    header.classList.remove("top-0");
+  }
 }

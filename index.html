@@ -16,11 +16,11 @@
     <header class="header">
         <div class="header-wrapper">
             <div class="container">
-                <div class="head">
+                <div id="blur" class="head">
                     <div class="nav-wrapper">
-                        <div class="img-wrapper">
+                        <a class="img-wrapper">
                             <img class="logo-image" src="./assets/images/logo.svg" alt="logo-image">
-                        </div>
+                        </a>
                         <div class="menu-icon">
                             <span></span>
                         </div>
@@ -41,7 +41,7 @@
                             </div>
                             <nav class="nav">
                                 <ul class="nav-list">
-                                    <li class="nav-list-item"><a href="#" class="nav-list-link">Features</a></li>
+                                    <li class="nav-list-item"><a href="#features" class="nav-list-link">Features</a></li>
                                     <li class="nav-list-item"><a href="#" class="nav-list-link">Benefits</a></li>
                                     <li class="nav-list-item"><a href="#" class="nav-list-link">Feedbacks</a></li>
                                     <li class="nav-list-item"><a href="#" class="nav-list-link">Contact</a></li>
@@ -73,113 +73,113 @@
                           </div>
                         </div>
                     </div>
-                    <div class="log-in-form-container">
-                        <div class="from-in-from-wrapper">
-                            <div class="log-in-header">
-                                <div class="img-wrapper">
-                                    <img class="logo-image" src="./assets/images/logo.svg" alt="logo-image">
-                                </div>
-                                <div class="log-in-menu-icon" onclick="openForm()">
-                                    <i class="fa-solid fa-xmark"></i>
-                                </div>
+                </div>
+                <div class="log-in-form-container">
+                    <div class="from-in-from-wrapper">
+                        <div class="log-in-header">
+                            <div class="img-wrapper">
+                                <img class="logo-image" src="./assets/images/logo.svg" alt="logo-image">
                             </div>
-                            <div class="log-in-title">
-                                Wellcome back to CheFoodie!
-                            </div>
-                            <div class="log-in-form">
-                                <form class="in-form">
-                                    <div class="input-wrapper">
-                                        <input type="email" class="input">
-                                        <span class="floating-label">Your Email</span>
-                                    </div>
-                                    <div class="input-wrapper">
-                                        <input type="password" class="input">
-                                        <span class="floating-label">Your Password</span>
-                                    </div>
-                                    <button class="button log-in-button">Sign up</button>
-                                </form>
-                            </div>
-                            <div class="log-in-questions">
-                                <p class="log-in-link">Don’t you have an account yet?</p>
-                                <a href="#" class="sign-up-link" onclick="formSingUp()">Sign up</a>
-                            </div>
-                            <div class="social-log-in">
-                                <a href="#" class="social-log-in-link">
-                                    <i class="fa-brands fa-facebook-f"></i>
-                                </a>
-                                <a href="#" class="social-log-in-link">
-                                    <i class="fa-brands fa-facebook-f"></i>
-                                </a>
-                                <a href="#" class="social-log-in-link">
-                                    <i class="fa-brands fa-facebook-f"></i>
-                                </a>
+                            <div class="log-in-menu-icon" onclick="openForm()">
+                                <i class="fa-solid fa-xmark"></i>
                             </div>
                         </div>
+                        <div class="log-in-title">
+                            Wellcome back to CheFoodie!
+                        </div>
+                        <div class="log-in-form">
+                            <form class="in-form">
+                                <div class="input-wrapper">
+                                    <input type="email" class="input">
+                                    <span class="floating-label">Your Email</span>
+                                </div>
+                                <div class="input-wrapper">
+                                    <input type="password" class="input">
+                                    <span class="floating-label">Your Password</span>
+                                </div>
+                                <button class="button log-in-button">Sign up</button>
+                            </form>
+                        </div>
+                        <div class="log-in-questions">
+                            <p class="log-in-link">Don’t you have an account yet?</p>
+                            <a href="#" class="sign-up-link" onclick="redirectForm()">Sign up</a>
+                        </div>
+                        <div class="social-log-in">
+                            <a href="#" class="social-log-in-link">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-log-in-link">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-log-in-link">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                        </div>
                     </div>
-                    <div class="sign-up-form-container">
-                        <div class="from-in-from-wrapper">
-                            <div class="log-in-header">
-                                <div class="img-wrapper">
-                                    <img class="logo-image" src="./assets/images/logo.svg" alt="logo-image">
+                </div>
+                <div class="sign-up-form-container">
+                    <div class="from-in-from-wrapper">
+                        <div class="log-in-header">
+                            <div class="img-wrapper">
+                                <img class="logo-image" src="./assets/images/logo.svg" alt="logo-image">
+                            </div>
+                            <div class="sign-up-menu-icon" onclick="formSingUp()">
+                                <i class="fa-solid fa-xmark"></i>
+                            </div>
+                        </div>
+                        <div class="log-in-title">
+                            Sign up to manage the restaurant’s information.
+                        </div>
+                        <div class="log-in-form">
+                            <form class="in-form">
+                                <select class="select" name="countries" id="select">
+                                    <option value="Argentina" class="option">Argentina</option>
+                                    <option value="Brazil" class="option">Brazil</option>
+                                    <option value="Chile" class="option">Chile</option>
+                                    <option value="Colombia" class="option">Colombia</option>
+                                    <option value="México" class="option">México</option>
+                                    <option value="Perú" class="option">Perú</option>
+                                </select>
+                                <div class="input-wrapper">
+                                    <input type="text" class="input">
+                                    <span class="floating-label">Restaurant Name</span>
                                 </div>
-                                <div class="sign-up-menu-icon" onclick="formSingUp()">
-                                    <i class="fa-solid fa-xmark"></i>
+                                <div class="input-wrapper">
+                                    <input type="text" class="input">
+                                    <span class="floating-label">Your Address</span>
                                 </div>
-                            </div>
-                            <div class="log-in-title">
-                                Sign up to manage the restaurant’s information.
-                            </div>
-                            <div class="log-in-form">
-                                <form class="in-form">
-                                    <select class="select" name="countries" id="select">
-                                        <option value="Argentina" class="option">Argentina</option>
-                                        <option value="Brazil" class="option">Brazil</option>
-                                        <option value="Chile" class="option">Chile</option>
-                                        <option value="Colombia" class="option">Colombia</option>
-                                        <option value="México" class="option">México</option>
-                                        <option value="Perú" class="option">Perú</option>
-                                    </select>
-                                    <div class="input-wrapper">
-                                        <input type="text" class="input">
-                                        <span class="floating-label">Restaurant Name</span>
-                                    </div>
-                                    <div class="input-wrapper">
-                                        <input type="text" class="input">
-                                        <span class="floating-label">Your Address</span>
-                                    </div>
-                                    <div class="input-wrapper">
-                                        <input type="email" class="input">
-                                        <span class="floating-label">Your Email</span>
-                                    </div>
-                                    <div class="input-wrapper">
-                                        <input type="password" class="input">
-                                        <span class="floating-label">Your Password</span>
-                                    </div>
-                                    <button class="button log-in-button">Sign in</button>
-                                </form>
-                            </div>
-                            <div class="log-in-questions">
-                                <p class="log-in-link">Don’t you have an account yet?</p>
-                                <a href="#" class="sign-up-link" onclick="formSingUp()">Sign up</a>
-                            </div>
-                            <div class="social-log-in">
-                                <a href="#" class="social-log-in-link">
-                                    <i class="fa-brands fa-facebook-f"></i>
-                                </a>
-                                <a href="#" class="social-log-in-link">
-                                    <i class="fa-brands fa-facebook-f"></i>
-                                </a>
-                                <a href="#" class="social-log-in-link">
-                                    <i class="fa-brands fa-facebook-f"></i>
-                                </a>
-                            </div>
+                                <div class="input-wrapper">
+                                    <input type="email" class="input">
+                                    <span class="floating-label">Your Email</span>
+                                </div>
+                                <div class="input-wrapper">
+                                    <input type="password" class="input">
+                                    <span class="floating-label">Your Password</span>
+                                </div>
+                                <button class="button log-in-button">Sign in</button>
+                            </form>
+                        </div>
+                        <div class="log-in-questions">
+                            <p class="log-in-link">Don’t you have an account yet?</p>
+                            <a href="#" class="sign-up-link" onclick="redirectForm()">Sign up</a>
+                        </div>
+                        <div class="social-log-in">
+                            <a href="#" class="social-log-in-link">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-log-in-link">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-log-in-link">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </header>
-    <main class="main">
+    <main id="blur" class="main">
         <div class="main-wrapper">
             <div class="container">
                 <div class="app">
@@ -200,7 +200,7 @@
                         <img class="app-image" src="./assets/images/iPhone.png" alt="app-image">
                     </div>
                 </div>
-                <div class="features">
+                <div id="features" class="features">
                     <h2 class="features-title">
                         Have all the necesary features in 1 app
                     </h2>
@@ -367,9 +367,9 @@
                 Or You can leave message here:
             </div>
             <div class="form-wrapper">
-                <form class="form need-validation">
+                <form id="contactForm" name="contact-form" class="form need-validation">
                     <div class="input-wrapper">
-                        <input id="name" required name="name" type="text" class="input">
+                        <input id="name" required name="contact-name" type="text" class="input">
                         <span class="floating-label">Your Name</span>
                     </div>
 
@@ -384,7 +384,7 @@
                         <span class="floating-label">Message</span>
                     </div>
                     
-                    <button class="button form-button">
+                    <button onclick="validateForm()" type="submit" class="button form-button">
                         Send the Message
                     </button>
                 </form>
@@ -798,13 +798,13 @@
         </div>
         
     </div>
-    <footer class="footer">
+    <footer id="blur" class="footer">
         <div class="wrapper">
             <div class="container">
                 <div class="footer-links">
-                    <div class="img-wrapper">
+                    <a href="#" class="img-wrapper">
                         <img class="logo-image" src="./assets/images/logo.svg" alt="logo-image">
-                    </div>
+                    </a>
                     <div class="footer-app">
                         <p class="action-act">
                             Get the App!
