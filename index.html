@@ -88,15 +88,15 @@
                             Wellcome back to CheFoodie!
                         </div>
                         <div class="log-in-form">
-                            <form class="in-form js-log-in">
+                            <form novalidate class="in-form js-log-in">
                                 <div class="in-input-wrapper">
                                     <p class="error-message">Please, fill in this field</p>
-                                    <input type="email" class="input js-log-in-input js-log-in-input-email">
+                                    <input placeholder="Enter Email" type="email" class="input js-log-in-input js-log-in-input-email">
                                     <span class="floating-label">Your Email</span>
                                 </div>
                                 <div class="in-input-wrapper">
                                     <p class="error-message">Please, fill in this field</p>
-                                    <input type="password" class="input js-log-in-input">
+                                    <input placeholder="Enter Password" type="password" class="input js-log-in-input">
                                     <span class="floating-label">Your Password</span>
                                 </div>
                                 <button class="button log-in-button">Sign up</button>
@@ -133,7 +133,7 @@
                             Sign up to manage the restaurant’s information.
                         </div>
                         <div class="log-in-form">
-                            <form class="in-form js-sing-up">
+                            <form novalidate class="in-form js-sing-up">
                                 <div class="up-input-wrapper">
                                     <select class="select" name="countries" id="select">
                                         <option value="Argentina" class="option">Argentina</option>
@@ -146,22 +146,22 @@
                                 </div>
                                 <div class="up-input-wrapper">
                                     <p class="error-message">This field is mandatory</p>
-                                    <input type="text" class="input js-sing-up-input">
+                                    <input placeholder="Enter Name" type="text" class="input js-sing-up-input">
                                     <span class="floating-label">Restaurant Name</span>
                                 </div>
                                 <div class="up-input-wrapper">
                                     <p class="error-message">This field is mandatory</p>
-                                    <input type="text" class="input js-sing-up-input">
+                                    <input placeholder="Enter Address" type="text" class="input js-sing-up-input">
                                     <span class="floating-label">Your Address</span>
                                 </div>
                                 <div class="up-input-wrapper">
                                     <p class="error-message">the email format should be: “text@text.com”</p>
-                                    <input type="email" class="input js-sing-up-input js-sing-up-input-email">
+                                    <input placeholder="Enter Email" type="email" class="input js-sing-up-input js-sing-up-input-email">
                                     <span class="floating-label">Your Email</span>
                                 </div>
                                 <div class="up-input-wrapper">
                                     <p class="error-message">This field is mandatory</p>
-                                    <input type="password" class="input js-sing-up-input">
+                                    <input placeholder="Enter Password" type="password" class="input js-sing-up-input">
                                     <span class="floating-label">Your Password</span>
                                 </div>
                                 <button type="submit" class="button log-in-button">Sign in</button>
@@ -378,19 +378,19 @@
                 <form novalidate id="contactForm" name="contact-form" class="form js-form">
                     <div class="input-wrapper">
                         <p class="error-message">Please, fill in this field</p>
-                        <input id="name" name="contact-name" type="text" class="input js-input">
+                        <input placeholder="Enter name" id="name" name="contact-name" type="text" class="input js-input">
                         <span class="floating-label">Your Name</span>
                     </div>
 
                     <div class="input-wrapper">
                         <p class="error-message">the email format should be: “text@text.com”</p>
-                        <input id="email" name="email" type="email" class="input js-input js-input-email">
+                        <input placeholder="Enter Email" id="email" name="email" type="email" class="input js-input js-input-email">
                         <span class="floating-label">Your email</span>
                     </div>
 
                     <div class="input-wrapper">
                         <p class="error-message">Please, fill in this field</p>
-                        <input name="textarea" id="textarea" class="input js-input"></input>
+                        <input placeholder="Enter text" name="textarea" id="textarea" class="input js-input"></input>
                         <span class="floating-label">Message</span>
                     </div>
                     

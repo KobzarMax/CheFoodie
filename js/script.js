@@ -561,7 +561,7 @@ signUpFormBlock.onsubmit = function() {
     const emailVal = signUpFormEmail.value
     const emptyInputs = Array.from(signUpFormBlock).filter(input => input.value === '')
 
-    signUpFormBlock.forEach(function (signUpInput) {
+    signUpFormInputs.forEach(function (signUpInput) {
         if (signUpInput.value === '') {
             signUpInput.classList.add("input-error")
             signUpInputWrappers.forEach(function (signUpInputWrapper) {

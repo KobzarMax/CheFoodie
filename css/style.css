@@ -428,19 +428,31 @@ input, select, option {
 .input-wrapper .floating-label {
 	position: absolute;
 	pointer-events: none;
-	top: 15px;
-	left: 30px;
+    top: 15px;
+    left: 30px;
 	transition: 0.3s ease all;
     color:var(--burger-color);
     font-size: 16px;
     font-family: var(--font-inter);
 }
-.input-wrapper input:focus ~ .floating-label {
-	top: -10px;
-	left: 10px;
-	font-size: 12px;
-	opacity: 1;
+
+input::placeholder{
+    opacity:0;
 }
+
+.input-wrapper:focus-within > .floating-label,
+input:not(:placeholder-shown) + .floating-label{
+    top: -10px;
+    left: 0;
+    font-size: 12px;
+}
+.input-wrapper:focus-within > .floating-label,
+.log-in-form-container input:not(:placeholder-shown) + .floating-label{
+    top: -10px;
+    left: -30px;
+    font-size: 12px;
+}
+
 
 .input-wrapper .input-error {
     border-bottom: 1px solid var(--button-color);
@@ -516,15 +528,42 @@ input, select, option {
 }
 .up-input-wrapper input:focus ~ .floating-label {
 	top: -10px;
-	left: 10px;
+	left: -30px;
 	font-size: 12px;
-    color: var(--button-color);
 	opacity: 1;
+}
+.up-input-wrapper input + .floating-label {
+	top: 15px;
+	left: -30px;
+	font-size: 16px;
+	opacity: 1;
+}
+.input-wrapper:focus-within > .floating-label,
+.sign-up-form-container input:not(:placeholder-shown) + .floating-label{
+    top: -10px;
+    left: -30px;
+    font-size: 12px;
 }
 .up-input-wrapper .input-error {
     border-bottom: 1px solid var(--button-color);
 }
 .ie .floating-label{
+	top: -10px;
+	left: 0px;
+	font-size: 12px;
+    color: var(--button-color);
+	opacity: 1;
+}
+
+.log-in-form-container .ie .floating-label{
+	top: -10px;
+	left: -30px;
+	font-size: 12px;
+    color: var(--button-color);
+	opacity: 1;
+}
+
+.sign-up-form-container .ie .floating-label{
 	top: -10px;
 	left: -30px;
 	font-size: 12px;
@@ -549,6 +588,15 @@ input, select, option {
 .ie {
     position: relative;
 }
+.input-wrapper.ie .error-message {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: absolute;
+    right: -60px;
+    bottom: 30px;
+}
+
 .log-in-form-container .ie .error-message {
     display: flex;
     align-items: center;
@@ -557,6 +605,16 @@ input, select, option {
     right: -30px;
     bottom: 30px;
 }
+.sign-up-form-container .ie .error-message {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: absolute;
+    right: -30px;
+    bottom: 30px;
+}
+
+
 .form-button {
     width: 194px;
     height: 50px;
@@ -947,6 +1005,7 @@ body._lock {
 html {
     scroll-behavior: smooth;
 }
+
 
 
 
@@ -1420,5 +1479,69 @@ html {
         position: absolute;
         right: 0px;
         bottom: 30px;
+    }
+    .log-in-form-container .ie .error-message {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        position: absolute;
+        right: 0px;
+        bottom: 30px;
+    }
+    .sign-up-form-container .ie .error-message {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        position: absolute;
+        right: 00px;
+        bottom: 30px;
+    }
+    .log-in-form-container .ie .floating-label{
+        top: -10px;
+        left: 0px;
+        font-size: 12px;
+        color: var(--button-color);
+        opacity: 1;
+    }
+    
+    .sign-up-form-container .ie .floating-label{
+        top: -10px;
+        left: 0px;
+        font-size: 12px;
+        color: var(--button-color);
+        opacity: 1;
+    }
+    .input-wrapper:focus-within > .floating-label,
+    .sign-up-form-container input:not(:placeholder-shown) + .floating-label{
+        top: -10px;
+        left: 0px;
+        font-size: 12px;
+    }
+    .select {
+        padding: 10px;
+    }
+    .up-input-wrapper input:focus ~ .floating-label {
+        top: -10px;
+        left: 0px;
+        font-size: 12px;
+        opacity: 1;
+    }
+    .up-input-wrapper input + .floating-label {
+        top: 15px;
+        left: 0px;
+        font-size: 16px;
+        opacity: 1;
+    }
+    .in-input-wrapper input:focus ~ .floating-label {
+        top: -10px;
+        left: 0px;
+        font-size: 12px;
+        opacity: 1;
+    }
+    .input-wrapper:focus-within > .floating-label,
+    .log-in-form-container input:not(:placeholder-shown) + .floating-label{
+        top: -10px;
+        left: 0px;
+        font-size: 12px;
     }
 }   
