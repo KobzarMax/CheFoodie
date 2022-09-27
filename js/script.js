@@ -471,3 +471,5 @@ function animateNavnarOnScroll() {
     header.classList.remove("top-0");
   }
 }
+
+

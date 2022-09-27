@@ -832,6 +832,9 @@ body._lock {
         padding: 40px 25px;
     }
 }
+html {
+    scroll-behavior: smooth;
+}
 
 
 @media (max-width: 1200px) {
