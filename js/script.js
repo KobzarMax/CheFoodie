@@ -341,27 +341,6 @@ $(document).ready(function(){
 });
 
 
-(function () {
-  'use strict'
-
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  var forms = document.querySelectorAll('.needs-validation')
-
-  // Loop over them and prevent submission
-  Array.prototype.slice.call(forms)
-    .forEach(function (form) {
-      form.addEventListener('submit', function (event) {
-        if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
-        }
-
-        form.classList.add('was-validated')
-      }, false)
-    })
-})()
-
-
 const burger = document.querySelector('.menu-icon')
 const mobileNav = document.querySelector('.mobile-nav');
 
@@ -401,6 +380,8 @@ const headNavBlock = document.querySelector(".head");
 const blurClass = mainBlock.classList.contains("blur")
 
 const bodyLockClass = document.body
+
+const openLogIn = logInForm.classList.contains("._log-in-active");
 
 function formLog() {
 
@@ -473,3 +454,141 @@ function animateNavnarOnScroll() {
 }
 
 
+// validation 
+
+const contactFormBlock = document.querySelector(".js-form");
+const logInFormBlock = document.querySelector(".js-log-in");
+const signUpFormBlock = document.querySelector(".js-sing-up");
+
+
+const contactFormInputs = document.querySelectorAll(".js-input");
+const logInFormInputs = document.querySelectorAll(".js-log-in-input");
+const signUpFormInputs = document.querySelectorAll(".js-sing-up-input");
+
+const contactFormEmail = document.querySelector(".js-input-email")
+const logInFormEmail = document.querySelector(".js-log-in-input-email")
+const signUpFormEmail = document.querySelector(".js-sing-up-input-email")
+
+const inputWrappers = document.querySelectorAll(".input-wrapper")
+const logInInputWrappers = document.querySelectorAll(".in-input-wrapper")
+const signUpInputWrappers = document.querySelectorAll(".up-input-wrapper")
+
+function validateEmail(contactFormEmail) {
+    let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(contactFormEmail).toLowerCase()); 
+}
+function validateEmail(logInFormEmail) {
+    let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(logInFormEmail).toLowerCase()); 
+}
+
+contactFormBlock.onsubmit = function() {
+
+    const emailVal = contactFormEmail.value
+    const emptyInputs = Array.from(contactFormInputs).filter(input => input.value === '')
+
+    contactFormInputs.forEach(function (contactInput) {
+        if (contactInput.value === '') {
+            contactInput.classList.add("input-error")
+            inputWrappers.forEach(function (inputWrapper) {
+                inputWrapper.classList.add("ie")
+            })
+            
+        } else {
+            contactInput.classList.remove("input-error");
+            inputWrappers.forEach(function (inputWrapper) {
+                inputWrapper.classList.remove("ie")
+            })
+        }
+    })
+
+    if (emptyInputs.length !== 0) {
+
+        return false
+    }
+
+    if(!validateEmail(emailVal)) {
+        console.log('email not valid');
+        contactFormEmail.classList.add('error');
+        return false;
+    } else {
+        contactFormEmail.classList.remove('error');
+    }
+
+    preventDefault();
+    
+}
+
+logInFormBlock.onsubmit = function() {
+
+    const emailVal = logInFormEmail.value
+    const emptyInputs = Array.from(logInFormInputs).filter(input => input.value === '')
+
+    logInFormInputs.forEach(function (logInInput) {
+        if (logInInput.value === '') {
+            logInInput.classList.add("input-error")
+            logInInputWrappers.forEach(function (logInInputWrapper) {
+                logInInputWrapper.classList.add("ie")
+            })
+            
+        } else {
+            logInInput.classList.remove("input-error");
+            logInInputWrappers.forEach(function (logInInputWrapper) {
+                logInInputWrapper.classList.remove("ie")
+            })
+        }
+    })
+
+    if (emptyInputs.length !== 0) {
+
+        return false
+    }
+
+    if(!validateEmail(emailVal)) {
+        console.log('email not valid');
+        logInFormEmail.classList.add('error');
+        return false;
+    } else {
+        logInFormEmail.classList.remove('error');
+    }
+
+    preventDefault();
+    
+}
+
+signUpFormBlock.onsubmit = function() {
+
+    const emailVal = signUpFormEmail.value
+    const emptyInputs = Array.from(signUpFormBlock).filter(input => input.value === '')
+
+    signUpFormBlock.forEach(function (signUpInput) {
+        if (signUpInput.value === '') {
+            signUpInput.classList.add("input-error")
+            signUpInputWrappers.forEach(function (signUpInputWrapper) {
+                signUpInputWrapper.classList.add("ie")
+            })
+            
+        } else {
+            signUpInput.classList.remove("input-error");
+            signUpInputWrappers.forEach(function (signUpInputWrapper) {
+                signUpInputWrapper.classList.remove("ie")
+            })
+        }
+    })
+
+    if (emptyInputs.length !== 0) {
+
+        return false
+    }
+
+    if(!validateEmail(emailVal)) {
+        console.log('email not valid');
+        signUpFormEmail.classList.add('error');
+        return false;
+    } else {
+        signUpFormEmail.classList.remove('error');
+    }
+
+    preventDefault();
+    
+}
