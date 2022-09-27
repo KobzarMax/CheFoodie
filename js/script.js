@@ -176,7 +176,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
 		this.dropdown = false;
 		this.firstLanguage = false;
 		// dropdown arrow inside the button element
-		this.svgPath = '<svg viewBox="0 0 16 16"><i class="fa-solid fa-chevron-down"></i></polygon></svg>';
+		this.svgPath = '<svg viewBox="0 0 16 16"><i class="fa-solid fa-chevron-down" onclick="closeDrop()"></i></polygon></svg>';
 		initLanguagePicker(this);
 		initLanguagePickerEvents(this);
 	};
@@ -605,4 +605,16 @@ signUpFormBlock.onsubmit = function() {
 
     preventDefault();
     
+}
+
+const drop = document.querySelector(".language-picker__button").getAttribute("aria-expanded");
+
+console.log(drop)
+
+function closeDrop() {
+    if (drop == true) {
+        drop = "false"
+    } else {
+        drop = "true"
+    }
 }
