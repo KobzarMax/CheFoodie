@@ -325,8 +325,8 @@ $(document).ready(function(){
         slidesToScroll: 1,
         arrows: true,
         zIndex: 1,
-        prevArrow: '<button class="slide-arrow prev-arrow bg-dark_blue text-font_white w-8 h-8 rounded-[50%] flex items-center justify-center"><i class="fa-solid fa-angle-right"></i></button>',
-        nextArrow: '<button class="slide-arrow next-arrow bg-light_blue text-font_white w-8 h-8 rounded-[50%] flex items-center justify-center"><i class="fa-solid fa-angle-left"></i></button>',
+        prevArrow: '<button class="slide-arrow prev-arrow"><i class="fa-solid fa-angle-right"></i></button>',
+        nextArrow: '<button class="slide-arrow next-arrow"><i class="fa-solid fa-angle-left"></i></button>',
 		responsive: [
 			{
 			  breakpoint: 992,

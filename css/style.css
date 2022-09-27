@@ -336,7 +336,7 @@
 
 .slick-arrow{
     position: absolute;
-    bottom: 70px;
+    bottom: 68px;
     z-index: 10;
     border: none;
     background-color: transparent;
@@ -1109,7 +1109,7 @@ html {
     }
     .slick-arrow{
         position: absolute;
-        bottom: 70px;
+        bottom: 68px;
         z-index: 10;
         border: none;
         background-color: transparent;
@@ -1289,6 +1289,7 @@ html {
     }
     .language-picker__label {
         justify-content: space-between;
+        height: 100%;
     }
     .language-picker__label i {
         rotate: 270deg;
@@ -1297,6 +1298,9 @@ html {
     }
     .language-picker__button[aria-expanded=true] .language-picker__label i {
         rotate: 90deg;
+    }
+    .fa-chevron-down:before {
+        z-index: 10;
     }
     em {
         margin-left: -50px;
