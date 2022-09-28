@@ -176,7 +176,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
 		this.dropdown = false;
 		this.firstLanguage = false;
 		// dropdown arrow inside the button element
-		this.svgPath = '<svg viewBox="0 0 16 16"><i class="fa-solid fa-chevron-down" onclick="closeDrop()"></i></polygon></svg>';
+		this.svgPath = '<svg viewBox="0 0 16 16"><i class="fa-solid fa-chevron-down"></i></polygon></svg>';
 		initLanguagePicker(this);
 		initLanguagePickerEvents(this);
 	};
@@ -690,8 +690,6 @@ signUpFormBlock.onchange = function() {
 
 const drop = document.querySelector(".language-picker__button").getAttribute("aria-expanded");
 
-console.log(drop)
-
 function closeDrop() {
     if (drop == true) {
         drop = "false"
@@ -699,6 +697,16 @@ function closeDrop() {
         drop = "true"
     }
 }
+
+const dropButton = document.querySelector(".language-picker__button");
+
+dropButton.addEventListener('transitionend', function(drop) {
+    if (drop == true) {
+        burger.classList.remove("_active");
+    } else {
+        burger.classList.add("_active");
+    }
+})
 
 // mob-nav 
 
@@ -711,6 +719,5 @@ function mobileScroll () {
     mobileNav.classList.remove("_active");
     document.body.classList.remove("_lock");
 
-
-    
 }
+

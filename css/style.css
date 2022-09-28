@@ -50,8 +50,13 @@
 .img-wrapper, .nav-list-item {
     margin-right: 40px;
 }
-.img-wrapper {
+.log-in-header .img-wrapper {
     margin-left: 43%;
+    width: 110px;
+    height: 38px;
+}
+.img-wrapper {
+    margin-left: 70px;
     cursor: pointer;
 }
 
@@ -1249,7 +1254,7 @@ html {
         font-size: 24px;
     }
     .nav-list-item {
-        margin-bottom: 50px;
+        margin-bottom: 20px;
         margin-right: 0;
     }
     .nav-list >li:last-child {
@@ -1514,9 +1519,20 @@ html {
         right: 0px;
         bottom: 30px;
     }
-    .img-wrapper {
+    .log-in-header .img-wrapper {
         margin-left: 35%;
         width: 110px;
         height: 38px;
+    }
+    .img-wrapper {
+        margin-left: 15px;
+        width: 110px;
+        height: 38px;
+    }
+    .language-picker__button[aria-expanded=true] .language-picker__label i {
+        position: absolute;
+        top: -55px;
+        left: 20px;
+        rotate: 90deg;
     }
 }   
