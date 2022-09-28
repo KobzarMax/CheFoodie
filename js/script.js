@@ -208,6 +208,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
 		var ariaExpanded;
 		if(bool) {
 			ariaExpanded = bool;
+            
 		} else {
 			ariaExpanded = picker.trigger.getAttribute('aria-expanded') == 'true' ? 'false' : 'true';
 		}
@@ -217,8 +218,11 @@ Math.easeInOutQuad = function(t, b, c, d) {
 			picker.dropdown.addEventListener('transitionend', function cb(){
 				picker.firstLanguage.focus();
 				picker.dropdown.removeEventListener('transitionend', cb);
-			});
+                burger.classList.toggle("display");
+			} );
+            
 		}
+        burger.classList.toggle("display");
 	};
 
 	function checkLanguagePickerClick(picker, target) { // if user clicks outside the language picker -> close it

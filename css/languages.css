@@ -2514,12 +2514,13 @@ u {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    border-radius: 50%;
+    border-radius: 0%;
 }
 
 .language-picker__dropdown .language-picker__flag::before {
     margin-right: .5rem;
-    margin-right: var(--space-xs)
+    margin-right: var(--space-xs);
+    border-radius: 50%;
 }
 
 .language-picker__flag--spanish::before {
@@ -2555,9 +2556,9 @@ u {
     .language-picker__dropdown {
         position: absolute;
         left: 0;
-        top: -170%;
+        top: -160%;
         width: 100vw;
-        height: 80vh;
+        height: 78vh;
         background-color: #fff;
         background-color: var(--color-bg);
         box-shadow: 0 1px 1px rgba(0, 0, 0, .2), 0 1px 8px rgba(0, 0, 0, .1);

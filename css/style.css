@@ -966,6 +966,20 @@ body._lock {
     margin: 0 auto;
     width: 100%;
 }
+.language-picker__button[aria-expanded=true] .language-picker__flag::before {
+    display: inline-block;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    content: '';
+    height: 25px;
+    width: 25px;
+    margin-right: 0.375rem;
+    margin-right: var(--space-xxs);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0px;
+}
 
 
 @media (max-width: 1375px) {
@@ -1258,7 +1272,7 @@ html {
         margin-right: 0;
     }
     .nav-list >li:last-child {
-        margin-bottom: 50px;
+        margin-bottom: 20px;
     }
     .logIn-button {
         width: 350px;
@@ -1534,5 +1548,8 @@ html {
         top: -55px;
         left: 20px;
         rotate: 90deg;
+    }
+    .display {
+        display: none;
     }
 }   
