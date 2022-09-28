@@ -758,8 +758,15 @@ input:not(:placeholder-shown) + .floating-label{
     color: var(--button-text);
     border: none;
 }
-.log-in-button:active {
-    border: 2px solid var(--burger-color);
+.valid-form{
+    background-color: var(--button-color);
+    color: var(--button-text);
+    border: 2px solid var(--button-color);
+}
+.valid-form:hover {
+    border: 2px solid var(--button-color);
+    background-color: var(--button-text);
+    color: var(--button-color);
 }
 .log-in-link {
     color: var(--text-color);

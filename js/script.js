@@ -583,6 +583,40 @@ logInFormBlock.onsubmit = function() {
     
 }
 
+const logInButton = document.querySelector(".log-in-button")
+
+logInFormBlock.onchange = function() {
+
+    const emailVal = logInFormEmail.value
+    const emptyInputs = Array.from(logInFormInputs).filter(input => input.value === '')
+
+    logInFormInputs.forEach(function (logInInput) {
+        if (logInInput.value !== '') {
+            logInButton.classList.add("valid-form");
+            
+        } else {
+            logInButton.classList.remove("valid-form");
+            
+        }
+    })
+
+    if (emptyInputs.length !== 0) {
+
+        return false
+    }
+
+    if(!validateEmail(emailVal)) {
+        console.log('email not valid');
+        logInFormEmail.classList.add('error');
+        return false;
+    } else {
+        logInFormEmail.classList.remove('error');
+    }
+
+    preventDefault();
+    
+}
+
 signUpFormBlock.onsubmit = function() {
 
     const emailVal = signUpFormEmail.value
@@ -614,6 +648,40 @@ signUpFormBlock.onsubmit = function() {
         return false;
     } else {
         signUpFormEmail.classList.remove('error');
+    }
+
+    preventDefault();
+    
+}
+
+const signUpClick = document.querySelector(".sign-up-click")
+
+signUpFormBlock.onchange = function() {
+
+    const emailVal = signUpFormEmail.value
+    const emptyInputs = Array.from(signUpFormInputs).filter(input => input.value === '')
+
+    signUpFormInputs.forEach(function (signUpInput) {
+        if (signUpInput.value !== '') {
+            signUpClick.classList.add("valid-form");
+            
+        } else {
+            signUpClick.classList.remove("valid-form");
+            
+        }
+    })
+
+    if (emptyInputs.length !== 0) {
+
+        return false
+    }
+
+    if(!validateEmail(emailVal)) {
+        console.log('email not valid');
+        logInFormEmail.classList.add('error');
+        return false;
+    } else {
+        logInFormEmail.classList.remove('error');
     }
 
     preventDefault();
