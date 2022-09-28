@@ -2548,16 +2548,16 @@ u {
 }
 
 
-@media (max-width: 420px) {
+@media (max-width: 992px) {
     .mobile-nav {
         position: relative;
     }
     .language-picker__dropdown {
         position: absolute;
         left: 0;
-        top: -300%;
-        width: 100%;
-        height: 100vh;
+        top: -170%;
+        width: 100vw;
+        height: 80vh;
         background-color: #fff;
         background-color: var(--color-bg);
         box-shadow: 0 1px 1px rgba(0, 0, 0, .2), 0 1px 8px rgba(0, 0, 0, .1);

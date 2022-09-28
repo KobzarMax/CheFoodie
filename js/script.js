@@ -325,8 +325,8 @@ $(document).ready(function(){
         slidesToScroll: 1,
         arrows: true,
         zIndex: 1,
-        prevArrow: '<button class="slide-arrow prev-arrow"><i class="fa-solid fa-angle-right"></i></button>',
-        nextArrow: '<button class="slide-arrow next-arrow"><i class="fa-solid fa-angle-left"></i></button>',
+        prevArrow: '<button class="slide-arrow prev-arrow"><img class="prev-arrow-image" src="./assets/images/arrow-prev.svg" alt="prev-arrow"></button>',
+        nextArrow: '<button class="slide-arrow next-arrow"><img class="next-arrow-image" src="./assets/images/arrow-next.svg" alt="next-arrow"></button>',
 		responsive: [
 			{
 			  breakpoint: 992,
@@ -384,6 +384,7 @@ function formLog() {
 	
     
     if(!blurClass) {
+        
         mainBlock.classList.toggle("blur");
         footerBlock.classList.toggle("blur");
         headNavBlock.classList.toggle("blur");
@@ -418,12 +419,15 @@ const privacyBlock = document.querySelector(".privacy");
 
 const conditionsBlock = document.querySelector(".conditions");
 
+const navBlock = document.querySelector(".desktop-nav");
+
 function openPrivacy() {
     if (conditionsBlock.classList.contains("_conditions-active")) {
         openConditions();
     }
     privacyBlock.classList.toggle("_privacy-active");
-    mainBlock.classList.toggle("display")
+    mainBlock.classList.toggle("display");
+    navBlock.classList.toggle("display");
 
     document.body.scrollTop = document.documentElement.scrollTop = 0;
 }
@@ -434,7 +438,9 @@ function openConditions() {
         openPrivacy();
     }
     conditionsBlock.classList.toggle("_conditions-active");
-    mainBlock.classList.toggle("display")
+    mainBlock.classList.toggle("display");
+    navBlock.classList.toggle("display");
+
 
     document.body.scrollTop = document.documentElement.scrollTop = 0;
 
@@ -443,9 +449,16 @@ function openConditions() {
 //refresh 
 
 function resreshPage() {
+
     conditionsBlock.classList.remove("_conditions-active");
     privacyBlock.classList.remove("_privacy-active");
-    mainBlock.classList.remove("display")
+    mainBlock.classList.remove("display");
+    navBlock.classList.remove("display");
+    mainBlock.classList.remove("blur");
+    footerBlock.classList.remove("blur");
+    headNavBlock.classList.remove("blur");
+    logInForm.classList.remove("_log-in-active");
+	singUpForm.classList.remove("_log-in-active");
 
     document.body.scrollTop = document.documentElement.scrollTop = 0;
 }
@@ -623,9 +636,13 @@ function closeDrop() {
 
 function mobileScroll () {
 
-
+    conditionsBlock.classList.remove("_conditions-active");
+    privacyBlock.classList.remove("_privacy-active");
+    mainBlock.classList.remove("display");
     burger.classList.remove("_active");
     mobileNav.classList.remove("_active");
     document.body.classList.remove("_lock");
+
+
     
 }

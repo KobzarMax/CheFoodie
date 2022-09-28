@@ -51,7 +51,7 @@
     margin-right: 40px;
 }
 .img-wrapper {
-    margin-left: 70px;
+    margin-left: 43%;
     cursor: pointer;
 }
 
@@ -347,28 +347,10 @@
 }
 
 .prev-arrow {
-    right: 41.5%;
-}
-.carousel::after {
-    content: "";
-    position: absolute;
-    width: 70px;
-    height: 1px;
-    bottom: 75px;
-    left: 428px;
-    background-color: var(--burger-color);
-}
-.carousel::before {
-    content: "";
-    position: absolute;
-    width: 70px;
-    height: 1px;
-    bottom: 75px;
-    right: 428px;
-    background-color: var(--burger-color);
+    left: 41.5%;
 }
 .next-arrow {
-    left: 41.5%;
+    right: 41.5%;
 }
 .contact-form-wrapper {
     display: flex;
@@ -706,7 +688,7 @@ input:not(:placeholder-shown) + .floating-label{
 }
 .log-in-form-container {
     background-color: var(--button-text);
-    width: 876px;
+    width: 60%;
     height: 100%;
     display: none;
     position: fixed;
@@ -724,7 +706,7 @@ input:not(:placeholder-shown) + .floating-label{
     user-select: none;
 }
 .log-in-form-container._log-in-active {
-    transform: translate(74%, 0px);
+    transform: translate(67%, 0px);
     visibility: visible;
     display: flex;
     visibility: visible;
@@ -732,6 +714,7 @@ input:not(:placeholder-shown) + .floating-label{
     justify-content: flex-start;
     flex-direction: column;
 }
+
 .log-in-form-container .img-wrapper {
     display: flex;
     align-items: center;
@@ -744,7 +727,7 @@ input:not(:placeholder-shown) + .floating-label{
 .log-in-title {
     font-size: 32px;
     text-align: center;
-    margin-bottom: 89px;
+    margin-bottom: 50px;
 }
 .log-in-form-container .input::placeholder {
     color: var(--form-color);
@@ -806,7 +789,7 @@ input:not(:placeholder-shown) + .floating-label{
     align-items: center;
     justify-content: center;
     gap: 75px;
-    margin-bottom: 160px;
+    margin-bottom: 50px;
 }
 .social-log-in-link {
     text-decoration: none;
@@ -831,11 +814,11 @@ input:not(:placeholder-shown) + .floating-label{
 .log-in-header {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 .sign-up-form-container {
     background-color: var(--button-text);
-    width: 876px;
+    width: 60%;
     height: 100%;
     display: none;
     position: fixed;
@@ -847,7 +830,7 @@ input:not(:placeholder-shown) + .floating-label{
     z-index: 199;
 }
 .sign-up-form-container._log-in-active {
-    transform: translate(74%, 0px);
+    transform: translate(67%, 0px);
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -966,6 +949,10 @@ body._lock {
 .option:hover {
     background-color: var(--button-text);
     color: var(--button-color);
+}
+.from-in-from-wrapper {
+    margin: 0 auto;
+    width: 100%;
 }
 
 
@@ -1120,31 +1107,13 @@ html {
     }
     
     .prev-arrow {
-        right: 25.5%;
-    }
-    .carousel::after {
-        content: "";
-        position: absolute;
-        width: 70px;
-        height: 1px;
-        bottom: 75px;
-        left: 101px;
-        background-color: var(--burger-color);
-    }
-    .carousel::before {
-        content: "";
-        position: absolute;
-        width: 70px;
-        height: 1px;
-        bottom: 75px;
-        right: 101px;
-        background-color: var(--burger-color);
+        left: 27%;
     }
     .features-cards {
         padding: 0;
     }
     .next-arrow {
-        left: 25.5%;
+        right: 27%;
     }
     .contact-form-wrapper {
         flex-direction: column;
@@ -1270,7 +1239,7 @@ html {
         flex-direction: column;
     }
     .nav-list-link {
-        font-size: 36px;
+        font-size: 24px;
     }
     .nav-list-item {
         margin-bottom: 50px;
@@ -1285,7 +1254,7 @@ html {
     }
     .button-wrapper {
         margin-top: 80px;
-        margin-bottom: 65px;
+        margin-bottom: 45px;
     }
     .language-picker__label {
         justify-content: space-between;
@@ -1307,7 +1276,7 @@ html {
         font-size: 24px;
     }
     .language-picker__item {
-        font-size: 36px;
+        font-size: 24px;
     }
     .language-picker__item[aria-selected=true]::after {
         content: "";
@@ -1367,9 +1336,6 @@ html {
     }
     .log-in-form {
         width: 350px;
-        margin: 0 auto;
-    }
-    .from-in-from-wrapper {
         margin: 0 auto;
     }
     .log-in-button {
@@ -1457,8 +1423,9 @@ html {
         height: 100%;
         display: flex;
         align-items: flex-start;
-        justify-content: center;
+        justify-content: flex-start;
         flex-direction: column;
+        margin-top: 100px;
     }
     .ie .error-message {
         display: flex;
@@ -1541,7 +1508,7 @@ html {
         bottom: 30px;
     }
     .img-wrapper {
-        margin-left: 15px;
+        margin-left: 35%;
         width: 110px;
         height: 38px;
     }
