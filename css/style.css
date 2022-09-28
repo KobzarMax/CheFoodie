@@ -823,6 +823,14 @@ input:not(:placeholder-shown) + .floating-label{
     height: 16px;
     cursor: pointer;
 }
+.sign-up-menu-icon {
+    z-index: 5;
+    display: block;
+    position: relative;
+    width: 32px;
+    height: 16px;
+    cursor: pointer;
+}
 .log-in-header {
     display: flex;
     align-items: center;
@@ -858,6 +866,8 @@ input:not(:placeholder-shown) + .floating-label{
 }
 .sign-up-form-container .log-in-title {
     max-width: 426px;
+    margin: 0 auto;
+    margin-bottom: 50px;
 }
 .select {
     border-bottom: 1px solid var(--text-color);
@@ -955,9 +965,6 @@ input:not(:placeholder-shown) + .floating-label{
 body._lock {
     overflow: hidden;
 }
-.head.blur {
-    border: 1px solid transparent;
-}
 .option:hover {
     background-color: var(--button-text);
     color: var(--button-color);
@@ -979,6 +986,55 @@ body._lock {
     background-size: cover;
     background-position: center;
     border-radius: 0px;
+}
+
+.country-select {
+	margin: 0 auto;
+	position: relative;
+	width: 250px;
+}
+.country-select.is-active .country-select__body {
+	display: block;}
+
+.country-select__header {
+	border: 1px solid #ccc;
+	cursor: pointer;
+	display: flex;
+}
+.country-select__current {
+	font-size: 18px;
+	line-height: 24px;
+	padding: 8px;
+}
+.country-select__icon {
+	align-items: center;
+	display: flex;
+	flex-shrink: 0;
+	justify-content: center;
+	height: 40px;
+	margin-left: auto;
+	text-align: center;
+	width: 40px;
+}
+
+.country-select__body {
+	border: 1px solid #cccccc;
+	border-top: 0;
+	display: none;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 100%;
+}
+.country-select__item {
+	cursor: pointer;
+	font-size: 16px;
+	line-height: 24px;
+	padding: 8px;
+}
+
+.country-select__item:hover {
+	background-color: #f2f2f2;
 }
 
 
@@ -1287,12 +1343,9 @@ html {
         height: 100%;
     }
     .language-picker__label i {
-        rotate: 270deg;
-        z-index: 10;
+        z-index: 999;
         font-size: 24px;
-    }
-    .language-picker__button[aria-expanded=true] .language-picker__label i {
-        rotate: 90deg;
+        transform: rotate(270deg);
     }
     .fa-chevron-down:before {
         z-index: 10;
@@ -1546,10 +1599,14 @@ html {
     .language-picker__button[aria-expanded=true] .language-picker__label i {
         position: absolute;
         top: -55px;
+        z-index: 999;
         left: 20px;
-        rotate: 90deg;
+        transform: rotate(90deg);
     }
     .display {
         display: none;
+    }
+    .language-picker__item[aria-selected=true] {
+        color: var(--button-color);
     }
 }   

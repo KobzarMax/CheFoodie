@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/fonts/stylesheet.css">
     <link rel="stylesheet" href="./css/languages.css">
+    <link rel="stylesheet" href="./css/drop.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -99,7 +100,7 @@
                                     <input placeholder="Enter Password" type="password" class="input js-log-in-input">
                                     <span class="floating-label">Your Password</span>
                                 </div>
-                                <button class="button log-in-button">Sign up</button>
+                                <button class="button log-in-button">Sign in</button>
                             </form>
                         </div>
                         <div class="log-in-questions">
@@ -135,14 +136,31 @@
                         <div class="log-in-form">
                             <form novalidate class="in-form js-sing-up">
                                 <div class="up-input-wrapper">
-                                    <select class="select" name="countries" id="select">
-                                        <option value="Argentina" class="option">Argentina</option>
-                                        <option value="Brazil" class="option">Brazil</option>
-                                        <option value="Chile" class="option">Chile</option>
-                                        <option value="Colombia" class="option">Colombia</option>
-                                        <option value="México" class="option">México</option>
-                                        <option value="Perú" class="option">Perú</option>
-                                    </select>
+                                    <div class="form-group">
+                                        <div class="dropdown">
+                                            <div class="dropdown__button">Country</div>
+                                            <ul class="dropdown__list">
+                                                <div class="mobile-page-header">
+                                                    <i class="fa-solid fa-chevron-down drop-close"></i>
+                                                    <div class="img-wrapper">
+                                                        <img class="logo-image" src="./assets/images/logo.svg" alt="logo-image">
+                                                    </div>
+                                                </div>
+                                                <p class="mobile-subheader">
+                                                    Please, select the country
+                                                </p>
+                                                <div class="drop-list">
+                                                    <li class="dropdown__list-item" data-value="travel">Argentina</li>
+                                                    <li class="dropdown__list-item" data-value="lessons">Brazil</li>
+                                                    <li class="dropdown__list-item" data-value="photo">Chile</li>
+                                                    <li class="dropdown__list-item" data-value="sport">Colombia</li>
+                                                    <li class="dropdown__list-item" data-value="sport">México</li>
+                                                    <li class="dropdown__list-item" data-value="sport">Perú</li>
+                                                </div>
+                                            </ul>
+                                            <input type="text" name="select-category" value="" class="dropdown__input-hidden" >
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="up-input-wrapper">
                                     <p class="error-message">This field is mandatory</p>
@@ -164,7 +182,7 @@
                                     <input placeholder="Enter Password" type="password" class="input js-sing-up-input">
                                     <span class="floating-label">Your Password</span>
                                 </div>
-                                <button type="submit" class="button log-in-button sign-up-click">Sign in</button>
+                                <button type="submit" class="button log-in-button sign-up-click">Sign up</button>
                             </form>
                         </div>
                         <div class="log-in-questions">
