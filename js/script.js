@@ -618,3 +618,14 @@ function closeDrop() {
         drop = "true"
     }
 }
+
+// mob-nav 
+
+function mobileScroll () {
+
+
+    burger.classList.remove("_active");
+    mobileNav.classList.remove("_active");
+    document.body.classList.remove("_lock");
+    
+}

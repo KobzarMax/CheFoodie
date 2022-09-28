@@ -1277,14 +1277,14 @@ html {
         margin-right: 0;
     }
     .nav-list >li:last-child {
-        margin-bottom: 100px;
+        margin-bottom: 50px;
     }
     .logIn-button {
         width: 350px;
         margin-right: 0;
     }
     .button-wrapper {
-        margin-top: 145px;
+        margin-top: 80px;
         margin-bottom: 65px;
     }
     .language-picker__label {
