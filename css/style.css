@@ -402,6 +402,9 @@ input, select, option {
     position: relative;
     z-index: 3;
 }
+.from-in-from-wrapper .input {
+    margin-bottom: 20px;
+}
 .input-wrapper {
 	position: relative;
 }
@@ -451,13 +454,33 @@ input:not(:placeholder-shown) + .floating-label{
     justify-content: center;
     flex-direction: column-reverse;
 }
+.for-input-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column-reverse;
+}
 .in-form .in-input-wrapper {
+    align-items: center;
+}
+.for-form .for-input-wrapper {
     align-items: center;
 }
 .in-input-wrapper {
 	position: relative;
 }
+.for-input-wrapper {
+	position: relative;
+}
 .in-input-wrapper .input{
+	width: 100%;
+	outline: none;
+	border:none;
+	border-bottom: 1px solid #777;
+ 	box-shadow: none !important;
+}
+.for-input-wrapper .input{
 	width: 100%;
 	outline: none;
 	border:none;
@@ -470,7 +493,17 @@ input:not(:placeholder-shown) + .floating-label{
 	top: 15px;
 	left: 0px;
 	transition: 0.3s ease all;
-    color:var(--burger-color);
+    color:var(--form-color);
+    font-size: 16px;
+    font-family: var(--font-inter);
+}
+.for-input-wrapper .floating-label {
+	position: absolute;
+	pointer-events: none;
+	top: 15px;
+	left: 0px;
+	transition: 0.3s ease all;
+    color:var(--form-color);
     font-size: 16px;
     font-family: var(--font-inter);
 }
@@ -478,9 +511,21 @@ input:not(:placeholder-shown) + .floating-label{
 	top: -10px;
 	left: -30px;
 	font-size: 12px;
+    color: var(--text-color);
 	opacity: 1;
 }
+.for-input-wrapper input:focus ~ .floating-label {
+	top: -10px;
+	left: -30px;
+	font-size: 12px;
+    color: var(--text-color);
+	opacity: 1;
+}
+
 .in-input-wrapper .input-error {
+    border-bottom: 1px solid var(--button-color);
+}
+.for-input-wrapper .input-error {
     border-bottom: 1px solid var(--button-color);
 }
 .up-input-wrapper {
@@ -509,7 +554,7 @@ input:not(:placeholder-shown) + .floating-label{
 	top: 15px;
 	left: 0px;
 	transition: 0.3s ease all;
-    color:var(--burger-color);
+    color:var(--form-color);
     font-size: 16px;
     font-family: var(--font-inter);
 }
@@ -517,6 +562,7 @@ input:not(:placeholder-shown) + .floating-label{
 	top: -10px;
 	left: -30px;
 	font-size: 12px;
+    color: var(--text-color);
 	opacity: 1;
 }
 .up-input-wrapper input + .floating-label {
@@ -590,7 +636,7 @@ input:not(:placeholder-shown) + .floating-label{
     justify-content: flex-end;
     position: absolute;
     right: -30px;
-    bottom: 30px;
+    bottom: 0px;
 }
 .sign-up-form-container .ie .error-message {
     display: flex;
@@ -598,7 +644,7 @@ input:not(:placeholder-shown) + .floating-label{
     justify-content: flex-end;
     position: absolute;
     right: -30px;
-    bottom: 30px;
+    bottom: 0px;
 }
 
 
@@ -695,26 +741,21 @@ input:not(:placeholder-shown) + .floating-label{
     background-color: var(--button-text);
     width: 60%;
     height: 100%;
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
     overflow: auto;
-    transition: all 0.3s ease 0s;
+    transition: all 0.3s ease;
     transform: translate(200%, 0px);
     z-index: 199;
-    visibility: hidden;
 }
 .blur {
-    filter: blur(20px);
+    filter: blur(20px) brightness(0.5);
     pointer-events: none;
     user-select: none;
 }
 .log-in-form-container._log-in-active {
     transform: translate(67%, 0px);
-    visibility: visible;
-    display: flex;
-    visibility: visible;
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
@@ -732,7 +773,7 @@ input:not(:placeholder-shown) + .floating-label{
 .log-in-title {
     font-size: 32px;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 .log-in-form-container .input::placeholder {
     color: var(--form-color);
@@ -753,12 +794,28 @@ input:not(:placeholder-shown) + .floating-label{
     color: var(--button-text);
     border: none;
     margin-bottom: 30px;
+    margin-top: 50px;
+    transition: 0.3s;
+}
+.for-button {
+    width: 194px;
+    background-color: #d5d5d5;
+    color: var(--button-text);
+    border: none;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    margin-top: 50px;
     transition: 0.3s;
 }
 .option:hover {
     color: var(--button-color);
 }
 .log-in-button:hover {
+    background-color: var(--button-color);
+    color: var(--button-text);
+    border: none;
+}
+.for-button:hover {
     background-color: var(--button-color);
     color: var(--button-text);
     border: none;
@@ -840,12 +897,11 @@ input:not(:placeholder-shown) + .floating-label{
     background-color: var(--button-text);
     width: 60%;
     height: 100%;
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
     overflow: auto;
-    transition: all 0.3s ease 0s;
+    transition: all 0.3s ease;
     transform: translate(200%, 0px);
     z-index: 199;
 }
@@ -867,7 +923,7 @@ input:not(:placeholder-shown) + .floating-label{
 .sign-up-form-container .log-in-title {
     max-width: 426px;
     margin: 0 auto;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 .select {
     border-bottom: 1px solid var(--text-color);
@@ -1035,6 +1091,58 @@ body._lock {
 
 .country-select__item:hover {
 	background-color: #f2f2f2;
+}
+
+.forgot-link-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 120%;
+}
+.forgot-link {
+    font-size: 14px;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: 0.3s;
+}
+.forgot-link:hover {
+    color: var(--button-color);
+}
+.log-in-subtitle {
+    max-width: 400px;
+    font-family: var(--font-inter);
+    font-size: 16px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+.forgot-pass-container {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(100%, 0px);
+    z-index: 200;
+    background-color: var(--button-text);
+}
+.forgot-pass-container._forgot_active {
+    top: 0;
+    right: 0;
+    transform: translate(0%, 0px);
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.dont-find-email {
+    width: 100%;
+    margin-top: 50px;
+    font-size: 24px;
+    display: none;
+}
+.dont-find-email.no-email {
+    display: flex;
+    align-items: center;
+    justify-content: center;    
 }
 
 
@@ -1395,12 +1503,11 @@ html {
         background-color: var(--button-text);
         width: 100%;
         height: 100%;
-        display: none;
         position: fixed;
         top: 0;
         left: 0;
         overflow: auto;
-        transition: all 0.3s ease 0s;
+        transition: all 0.3s ease;
         transform: translate(200%, 0px);
         z-index: 199;
     }
@@ -1421,6 +1528,10 @@ html {
         width: 350px;
         margin-bottom: 0;
     }
+    .for-button {
+        width: 350px;
+        margin-bottom: 0;
+    }
     .in-form {
         margin-bottom: 20px;
     }
@@ -1438,12 +1549,11 @@ html {
         background-color: var(--button-text);
         width: 100%;
         height: 100%;
-        display: none;
         position: fixed;
         top: 0;
         left: 0;
         overflow: auto;
-        transition: all 0.3s ease 0s;
+        transition: all 0.3s ease;
         transform: translate(200%, 0px);
         z-index: 199;
     }
@@ -1520,15 +1630,15 @@ html {
         justify-content: flex-end;
         position: absolute;
         right: 0px;
-        bottom: 30px;
+        bottom: 0px;
     }
     .sign-up-form-container .ie .error-message {
         display: flex;
         align-items: center;
         justify-content: flex-end;
         position: absolute;
-        right: 00px;
-        bottom: 30px;
+        right: 0px;
+        bottom: 0px;
     }
     .log-in-form-container .ie .floating-label{
         top: -10px;
@@ -1578,6 +1688,12 @@ html {
         left: 0px;
         font-size: 12px;
     }
+    .for-input-wrapper input:focus ~ .floating-label {
+        top: -10px;
+        left: 0px;
+        font-size: 12px;
+        opacity: 1;
+    }
     .input-wrapper.ie .error-message {
         display: flex;
         align-items: center;
@@ -1608,5 +1724,8 @@ html {
     }
     .language-picker__item[aria-selected=true] {
         color: var(--button-color);
+    }
+    .forgot-link-wrapper {
+        width: 100%;
     }
 }   

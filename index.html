@@ -100,6 +100,9 @@
                                     <input placeholder="Enter Password" type="password" class="input js-log-in-input">
                                     <span class="floating-label">Your Password</span>
                                 </div>
+                                <div class="forgot-link-wrapper">
+                                    <a href="#" class="forgot-link" onclick="forgotActive()">I forgot my password</a>
+                                </div>
                                 <button class="button log-in-button">Sign in</button>
                             </form>
                         </div>
@@ -117,6 +120,38 @@
                             <a href="#" class="social-log-in-link">
                                 <i class="fa-brands fa-facebook-f"></i>
                             </a>
+                        </div>
+                    </div>
+                    <div class="forgot-pass-container">
+                        <div class="from-in-from-wrapper">
+                            <div class="log-in-header">
+                                <div class="img-wrapper">
+                                    <img class="logo-image" src="./assets/images/logo.svg" alt="logo-image">
+                                </div>
+                                <div class="log-in-menu-icon" onclick="forgotActive()">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </div>
+                            </div>
+                            <div class="log-in-title">
+                                Do you forgot your password?
+                            </div>
+                            <p class="log-in-subtitle">
+                                Please enter the email address you used to create your account and we will send you the password.
+                                You can change your password after signing in.
+                            </p>
+                            <div class="log-in-form">
+                                <form novalidate class="for-form js-log-in">
+                                    <div class="for-input-wrapper">
+                                        <p class="error-message">Please, fill in this field</p>
+                                        <input placeholder="Enter Email" type="email" class="input js-for-input js-for-input-email">
+                                        <span class="floating-label">Your Email</span>
+                                    </div>
+                                    <button class="button for-button">Send</button>
+                                </form>
+                                <p class="dont-find-email">
+                                    We can’t find.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -138,7 +173,7 @@
                                 <div class="up-input-wrapper">
                                     <div class="form-group">
                                         <div class="dropdown">
-                                            <div class="dropdown__button">Country</div>
+                                            <div class="dropdown__button">Country <i class="fa-solid fa-chevron-down"></i></div>
                                             <ul class="dropdown__list">
                                                 <div class="mobile-page-header">
                                                     <i class="fa-solid fa-chevron-down drop-close"></i>

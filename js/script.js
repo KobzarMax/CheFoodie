@@ -28,6 +28,8 @@ document.querySelectorAll('.dropdown').forEach(function (dropDownWrapper) {
 			dropDownBtn.focus();
 			dropDownInput.value = this.dataset.value;
 			dropDownList.classList.remove('dropdown__list--visible');
+            dropDownBtn.classList.add("chousen-country")
+
 		});
 	});
 
@@ -471,6 +473,15 @@ function formSingUp() {
 
 }
 
+const forgotActiveLink = document.querySelector(".forgot-link")
+const forgotBlock = document.querySelector(".forgot-pass-container")
+
+function forgotActive () {
+
+    forgotBlock.classList.toggle("_forgot_active");
+    
+}
+
 function redirectForm() {
     logInForm.classList.toggle("_log-in-active");
 	singUpForm.classList.toggle("_log-in-active");
@@ -553,14 +564,26 @@ const signUpFormBlock = document.querySelector(".js-sing-up");
 const contactFormInputs = document.querySelectorAll(".js-input");
 const logInFormInputs = document.querySelectorAll(".js-log-in-input");
 const signUpFormInputs = document.querySelectorAll(".js-sing-up-input");
+const forgotInputs = document.querySelector(".js-for-input")
 
 const contactFormEmail = document.querySelector(".js-input-email")
 const logInFormEmail = document.querySelector(".js-log-in-input-email")
 const signUpFormEmail = document.querySelector(".js-sing-up-input-email")
+const forgotEmail = document.querySelector(".js-for-input-email")
 
 const inputWrappers = document.querySelectorAll(".input-wrapper")
 const logInInputWrappers = document.querySelectorAll(".in-input-wrapper")
 const signUpInputWrappers = document.querySelectorAll(".up-input-wrapper")
+const forgotWrappers = document.querySelectorAll(".for-input-wrapper")
+
+
+
+
+function validateEmail(forgotEmail) {
+    let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(forgotEmail).toLowerCase()); 
+}
+
 
 function validateEmail(contactFormEmail) {
     let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -605,6 +628,40 @@ contactFormBlock.onsubmit = function() {
     }
 
     preventDefault();
+    
+}
+
+forgotBlock.onsubmit = function() {
+
+    const emailVal = forgotEmail.value
+    const emptyInputs = Array.from(forgotInputs).filter(input => input.value === '')
+
+        if (forgotInputs.value === '') {
+            forgotInputs.classList.add("input-error")
+            forgotWrappers.forEach(function (forgotWrapper) {
+                forgotWrapper.classList.add("ie")
+            })
+            
+        } else {
+            forgotInputs.classList.remove("input-error");
+            forgotWrappers.forEach(function (forgotWrapper) {
+                forgotWrapper.classList.remove("ie")
+            })
+        }
+
+    if (emptyInputs.length !== 0) {
+
+        return false
+    }
+
+    if(!validateEmail(emailVal)) {
+        console.log('email not valid');
+        contactFormEmail.classList.add('error');
+        return false;
+    } else {
+        contactFormEmail.classList.remove('error');
+    }
+
     
 }
 
@@ -673,6 +730,42 @@ logInFormBlock.onchange = function() {
         return false;
     } else {
         logInFormEmail.classList.remove('error');
+    }
+
+    preventDefault();
+    
+}
+
+const forgotButton = document.querySelector(".for-button")
+
+const findEmail = document.querySelector(".dont-find-email")
+
+logInFormBlock.onchange = function() {
+
+    const emailVal = forgotEmail.value
+    const emptyInputs = Array.from(forgotInputs).filter(input => input.value === '')
+
+        if (emptyInputs.value !== '') {
+            forgotButton.classList.add("valid-form");
+            findEmail.classList.add("no-email");
+            
+        } else {
+            forgotButton.classList.remove("valid-form");
+            findEmail.classList.remove("no-email");
+            
+        }
+
+    if (emptyInputs.length !== 0) {
+
+        return false
+    }
+
+    if(!validateEmail(emailVal)) {
+        console.log('email not valid');
+        forgotEmail.classList.add('error');
+        return false;
+    } else {
+        forgotEmail.classList.remove('error');
     }
 
     preventDefault();

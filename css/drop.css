@@ -17,7 +17,7 @@
 }
 
 .form-group {
-	margin-bottom: 50px;
+	margin-bottom: 20px;
     width: 100%;
 }
 
@@ -35,7 +35,9 @@ Select c dropdown на JS
 
 .dropdown__button {
 	position: relative;
-	display: block;
+	display: flex;
+    align-items: center;
+    justify-content: space-between;
 	width: 120%;
 	text-align: left;
     background-color: transparent;
@@ -105,6 +107,9 @@ Select c dropdown на JS
 .mobile-subheader {
     display: none;
 }
+.chousen-country {
+    color: var(--burger-color);
+}
 
 @media (max-width: 992px) {
     .dropdown__button {
@@ -114,14 +119,17 @@ Select c dropdown на JS
         width: 100%;
     }
     .dropdown__list {
-        width: 120%;
-        height: 120vh;
-        display: block;
-        transform: translate(100%, -26%);
-        transition: 0.3s ease;
+        width: 100%;
+        height: 160vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translate(100%, 0%);
+        
+        transition: all 0.3s ease;
     }
     .dropdown__list--visible {
-        transform: translate(0%, -26%);
+        transform: translate(0%, -0%);
         display: flex;
         align-items: center;
         justify-content: flex-start;
