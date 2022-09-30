@@ -482,6 +482,24 @@ function forgotActive () {
     
 }
 
+const sendPassBlock = document.querySelector(".send-pass-container")
+
+function sendPassActive () {
+
+    if (forgotButton.classList.contains("valid-form")) {
+
+        sendPassBlock.classList.toggle("_send-pass_active");
+
+        if (forgotBlock.classList.contains("_forgot_active")) {
+            forgotBlock.classList.remove("_forgot_active");
+        }
+
+    }
+
+    
+    
+}
+
 function redirectForm() {
     logInForm.classList.toggle("_log-in-active");
 	singUpForm.classList.toggle("_log-in-active");
@@ -631,6 +649,8 @@ contactFormBlock.onsubmit = function() {
     
 }
 
+const findEmail = document.querySelector(".dont-find-email")
+
 forgotBlock.onsubmit = function() {
 
     const emailVal = forgotEmail.value
@@ -640,12 +660,14 @@ forgotBlock.onsubmit = function() {
             forgotInputs.classList.add("input-error")
             forgotWrappers.forEach(function (forgotWrapper) {
                 forgotWrapper.classList.add("ie")
+                
             })
             
         } else {
             forgotInputs.classList.remove("input-error");
             forgotWrappers.forEach(function (forgotWrapper) {
                 forgotWrapper.classList.remove("ie")
+
             })
         }
 
@@ -656,10 +678,12 @@ forgotBlock.onsubmit = function() {
 
     if(!validateEmail(emailVal)) {
         console.log('email not valid');
-        contactFormEmail.classList.add('error');
+        findEmail.classList.add('error');
+        findEmail.classList.add("no-email");
         return false;
     } else {
-        contactFormEmail.classList.remove('error');
+        findEmail.classList.remove('error');
+        findEmail.classList.remove("no-email");
     }
 
     
@@ -738,24 +762,22 @@ logInFormBlock.onchange = function() {
 
 const forgotButton = document.querySelector(".for-button")
 
-const findEmail = document.querySelector(".dont-find-email")
 
-logInFormBlock.onchange = function() {
+
+forgotBlock.onchange = function() {
 
     const emailVal = forgotEmail.value
     const emptyInputs = Array.from(forgotInputs).filter(input => input.value === '')
 
-        if (emptyInputs.value !== '') {
+        if (forgotEmail.value !== '') {
             forgotButton.classList.add("valid-form");
-            findEmail.classList.add("no-email");
             
         } else {
             forgotButton.classList.remove("valid-form");
-            findEmail.classList.remove("no-email");
             
         }
 
-    if (emptyInputs.length !== 0) {
+    if (forgotEmail.length !== 0) {
 
         return false
     }

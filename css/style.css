@@ -346,6 +346,11 @@
     border: none;
     background-color: transparent;
     color: var(--burger-color);
+    cursor: pointer;
+    transition: 0.3s;
+}
+.slick-arrow:hover {
+    filter: invert(33%) sepia(61%) saturate(6828%) hue-rotate(358deg) brightness(99%) contrast(98%);
 }
 .slick-arrow i {
     font-size: 10px;
@@ -745,7 +750,7 @@ input:not(:placeholder-shown) + .floating-label{
     top: 0;
     left: 0;
     overflow: auto;
-    transition: all 0.3s ease;
+    transition: all 0.6s ease;
     transform: translate(200%, 0px);
     z-index: 199;
 }
@@ -864,7 +869,8 @@ input:not(:placeholder-shown) + .floating-label{
     text-decoration: none;
     color: var(--burger-color);
     font-size: 35px;
-    border: 1px solid var(--burger-color);
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    background-color: var(--button-text);
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -877,7 +883,7 @@ input:not(:placeholder-shown) + .floating-label{
     display: block;
     position: relative;
     width: 32px;
-    height: 16px;
+    height: 32px;
     cursor: pointer;
 }
 .sign-up-menu-icon {
@@ -885,7 +891,7 @@ input:not(:placeholder-shown) + .floating-label{
     display: block;
     position: relative;
     width: 32px;
-    height: 16px;
+    height: 32px;
     cursor: pointer;
 }
 .log-in-header {
@@ -901,7 +907,7 @@ input:not(:placeholder-shown) + .floating-label{
     top: 0;
     left: 0;
     overflow: auto;
-    transition: all 0.3s ease;
+    transition: all 0.6s ease;
     transform: translate(200%, 0px);
     z-index: 199;
 }
@@ -941,7 +947,7 @@ input:not(:placeholder-shown) + .floating-label{
     position: static;
     top: 97px;
     overflow: auto;
-    transition: all 0.3s ease 0s;
+    transition: all 0.3s ease;
     transform: translate(0px, -100%);
     z-index: 6;
 }
@@ -954,7 +960,7 @@ input:not(:placeholder-shown) + .floating-label{
     display: none;
     position: static;
     overflow: auto;
-    transition: all 0.3s ease 0s;
+    transition: all 0.3s ease;
     transform: translate(0px, -100%);
     z-index: 6;
 }
@@ -1122,6 +1128,17 @@ body._lock {
     top: 0;
     right: 0;
     transform: translate(100%, 0px);
+    transition: all 0.6s ease;
+    z-index: 200;
+    background-color: var(--button-text);
+}
+.send-pass-container {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(100%, 0px);
+    transition: all 0.6s ease;
     z-index: 200;
     background-color: var(--button-text);
 }
@@ -1133,16 +1150,48 @@ body._lock {
     height: 100%;
     display: block;
 }
+.send-pass-container._send-pass_active {
+    top: 0;
+    right: 0;
+    transform: translate(0%, 0px);
+    width: 100%;
+    height: 100%;
+    display: block;
+}
 .dont-find-email {
     width: 100%;
     margin-top: 50px;
-    font-size: 24px;
+    font-size: 16px;
     display: none;
+    font-family: var(--font-inter);
+    color: var(--text-color);
+    text-align: center;
+}
+.send-pass-container .log-in-subtitle {
+    margin-top: 123px;
+    margin-bottom: 69px;
+}
+.pass-button {
+    margin: 0 auto;
+    border: none;
+    background-color: var(--button-color);
+    color: var(--button-text);
+    transition: 0.3s; 
+}
+.pass-button:hover {
+    margin: 0 auto;
+    border: 2px solid var(--text-color);
 }
 .dont-find-email.no-email {
     display: flex;
     align-items: center;
     justify-content: center;    
+}
+.forgot-pass-container .from-in-from-wrapper {
+    height: 100%;
+}
+.send-pass-container .from-in-from-wrapper {
+    height: 100%;
 }
 
 
@@ -1419,7 +1468,7 @@ html {
         height: 100%;
         background-color: var(--bg-color);
         overflow: auto;
-        transition: all 0.4s ease 0s;
+        transition: all 0.4s ease;
         transform: translate(-100%, 0px);
     }
     .mobile-nav._active {
@@ -1432,11 +1481,11 @@ html {
         font-size: 24px;
     }
     .nav-list-item {
-        margin-bottom: 20px;
+        margin-bottom: 30px;
         margin-right: 0;
     }
     .nav-list >li:last-child {
-        margin-bottom: 20px;
+        margin-bottom: 163px;
     }
     .logIn-button {
         width: 350px;
@@ -1444,7 +1493,7 @@ html {
     }
     .button-wrapper {
         margin-top: 80px;
-        margin-bottom: 45px;
+        margin-bottom: 163px;
     }
     .language-picker__label {
         justify-content: space-between;
@@ -1507,7 +1556,7 @@ html {
         top: 0;
         left: 0;
         overflow: auto;
-        transition: all 0.3s ease;
+        transition: all 0s ease;
         transform: translate(200%, 0px);
         z-index: 199;
     }
@@ -1553,7 +1602,7 @@ html {
         top: 0;
         left: 0;
         overflow: auto;
-        transition: all 0.3s ease;
+        transition: all 0s ease;
         transform: translate(200%, 0px);
         z-index: 199;
     }
@@ -1727,5 +1776,16 @@ html {
     }
     .forgot-link-wrapper {
         width: 100%;
+    }
+    .send-pass-container .log-in-subtitle {
+        margin-top: 83px;
+        margin-bottom: 105px;
+        padding: 0 40px;
+    }
+    .pass-button {
+        width: 350px;
+    }
+    .fa-xmark {
+        font-size: 32px;
     }
 }   

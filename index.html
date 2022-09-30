@@ -112,13 +112,13 @@
                         </div>
                         <div class="social-log-in">
                             <a href="#" class="social-log-in-link">
-                                <i class="fa-brands fa-facebook-f"></i>
+                                <img class="pop-link" src="./assets/images/pop-facebook.svg" alt="pop-up-link">
                             </a>
                             <a href="#" class="social-log-in-link">
-                                <i class="fa-brands fa-facebook-f"></i>
+                                <img class="pop-link" src="./assets/images/pop-google.svg" alt="pop-up-link">
                             </a>
                             <a href="#" class="social-log-in-link">
-                                <i class="fa-brands fa-facebook-f"></i>
+                                <img class="pop-link" src="./assets/images/pop-apple.svg" alt="pop-up-link">
                             </a>
                         </div>
                     </div>
@@ -146,11 +146,33 @@
                                         <input placeholder="Enter Email" type="email" class="input js-for-input js-for-input-email">
                                         <span class="floating-label">Your Email</span>
                                     </div>
-                                    <button class="button for-button">Send</button>
+                                    <button class="button for-button" onclick="sendPassActive()">Send</button>
                                 </form>
                                 <p class="dont-find-email">
-                                    We can’t find.
+                                    Sorry, we can’t find the user with this email.
+                                    Try correct the email or connect with us.
                                 </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="send-pass-container">
+                        <div class="from-in-from-wrapper">
+                            <div class="log-in-header">
+                                <div class="img-wrapper">
+                                    <img class="logo-image" src="./assets/images/logo.svg" alt="logo-image">
+                                </div>
+                                <div class="log-in-menu-icon" onclick="sendPassActive()">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </div>
+                            </div>
+                            <p class="log-in-subtitle">
+                                We send you the letter with your password. <br>
+                                Please check your email.
+                            </p>
+                            <div class="log-in-form">
+                                <form novalidate class="for-form js-log-in">
+                                    <button class="button pass-button" onclick="sendPassActive()">Back to Sign in</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -226,13 +248,13 @@
                         </div>
                         <div class="social-log-in">
                             <a href="#" class="social-log-in-link">
-                                <i class="fa-brands fa-facebook-f"></i>
+                                <img class="pop-link" src="./assets/images/pop-facebook.svg" alt="pop-up-link">
                             </a>
                             <a href="#" class="social-log-in-link">
-                                <i class="fa-brands fa-facebook-f"></i>
+                                <img class="pop-link" src="./assets/images/pop-google.svg" alt="pop-up-link">
                             </a>
                             <a href="#" class="social-log-in-link">
-                                <i class="fa-brands fa-facebook-f"></i>
+                                <img class="pop-link" src="./assets/images/pop-apple.svg" alt="pop-up-link">
                             </a>
                         </div>
                     </div>

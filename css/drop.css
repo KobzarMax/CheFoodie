@@ -114,9 +114,14 @@ Select c dropdown на JS
 @media (max-width: 992px) {
     .dropdown__button {
         padding-left: 0;
+        padding-right: 0;
         margin-left: 0;
         margin-right: 0;
         width: 100%;
+    }
+    .dropdown__button .fa-chevron-down {
+        color: var(--text-color);
+        transform: rotate(270deg);
     }
     .dropdown__list {
         width: 100%;
@@ -156,6 +161,7 @@ Select c dropdown на JS
         justify-content: center;
         margin: 0 auto;
         margin-bottom: 40px;
+        font-size: 24px;
     }
     .dropdown__list-item {
         font-size: 24px;
