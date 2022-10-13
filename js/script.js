@@ -479,6 +479,7 @@ const forgotBlock = document.querySelector(".forgot-pass-container")
 function forgotActive () {
 
     forgotBlock.classList.toggle("_forgot_active");
+    forgotButton.classList.remove("valid-form");
     
 }
 
@@ -486,7 +487,7 @@ const sendPassBlock = document.querySelector(".send-pass-container")
 
 function sendPassActive () {
 
-    if (forgotButton.classList.contains("valid-form")) {
+    if (validateEmail(forgotEmail.value)) {
 
         sendPassBlock.classList.toggle("_send-pass_active");
 
@@ -599,7 +600,7 @@ const forgotWrappers = document.querySelectorAll(".for-input-wrapper")
 
 function validateEmail(forgotEmail) {
     let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(forgotEmail).toLowerCase()); 
+    return re.test(String(forgotEmail).toLowerCase())
 }
 
 
@@ -767,9 +768,10 @@ const forgotButton = document.querySelector(".for-button")
 forgotBlock.onchange = function() {
 
     const emailVal = forgotEmail.value
-    const emptyInputs = Array.from(forgotInputs).filter(input => input.value === '')
+    const emptyInputs = Array.from(forgotEmail).filter(input => input.value === '')
 
-        if (forgotEmail.value !== '') {
+
+        if (emailVal.value !== '') {
             forgotButton.classList.add("valid-form");
             
         } else {
@@ -777,12 +779,12 @@ forgotBlock.onchange = function() {
             
         }
 
-    if (forgotEmail.length !== 0) {
+    if (forgotEmail.length === 0) {
 
         return false
     }
 
-    if(!validateEmail(emailVal)) {
+    if(!validateEmail(emptyInputs)) {
         console.log('email not valid');
         forgotEmail.classList.add('error');
         return false;
