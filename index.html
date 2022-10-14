@@ -19,12 +19,15 @@
             <div class="container">
                 <div id="blur" class="head">
                     <div class="nav-wrapper">
-                        <a class="img-wrapper">
-                            <img class="logo-image" src="./assets/images/logo.svg" alt="logo-image" onclick="resreshPage()">
-                        </a>
                         <div class="menu-icon">
                             <span></span>
                         </div>
+
+                        <a class="img-wrapper">
+                            <img class="logo-image" src="./assets/images/logo.svg" alt="logo-image" onclick="resreshPage()">
+                        </a>
+                        
+                        <button class="button logIn-button" onclick="openForm()">Log In</button>
                         <div class="mobile-nav">
                             <div class="button-wrapper">
                                 <div class="js">
@@ -48,7 +51,6 @@
                                     <li class="nav-list-item"><a onclick="mobileScroll()" href="#contact-form-wrapper" class="nav-list-link">Contact</a></li>
                                 </ul>
                             </nav>
-                            <button class="button logIn-button" onclick="openForm()">Log In</button>
                         </div>
                         <nav class="nav desktop-nav">
                             <ul class="nav-list">
@@ -103,7 +105,7 @@
                                 <div class="forgot-link-wrapper">
                                     <a href="#" class="forgot-link" onclick="forgotActive()">I forgot my password</a>
                                 </div>
-                                <button class="button log-in-button">Sign in</button>
+                                <button class="button log-in-button log-in-click">Sign in</button>
                             </form>
                         </div>
                         <div class="log-in-questions">

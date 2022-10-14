@@ -497,8 +497,10 @@ function sendPassActive () {
 
     }
 
-    
-    
+    setTimeout(function () {
+        sendPassBlock.classList.remove("_send-pass_active");
+    }, 7000)
+
 }
 
 function redirectForm() {
@@ -659,6 +661,7 @@ forgotBlock.onsubmit = function() {
 
         if (forgotInputs.value === '') {
             forgotInputs.classList.add("input-error")
+            forgotButton.classList.add('error-button');
             forgotWrappers.forEach(function (forgotWrapper) {
                 forgotWrapper.classList.add("ie")
                 
@@ -666,6 +669,7 @@ forgotBlock.onsubmit = function() {
             
         } else {
             forgotInputs.classList.remove("input-error");
+            forgotButton.classList.remove('error-button');
             forgotWrappers.forEach(function (forgotWrapper) {
                 forgotWrapper.classList.remove("ie")
 
@@ -698,12 +702,14 @@ logInFormBlock.onsubmit = function() {
     logInFormInputs.forEach(function (logInInput) {
         if (logInInput.value === '') {
             logInInput.classList.add("input-error")
+            logInButton.classList.add('error-button');
             logInInputWrappers.forEach(function (logInInputWrapper) {
                 logInInputWrapper.classList.add("ie")
             })
             
         } else {
             logInInput.classList.remove("input-error");
+            logInButton.classList.remove('error-button');
             logInInputWrappers.forEach(function (logInInputWrapper) {
                 logInInputWrapper.classList.remove("ie")
             })
@@ -715,19 +721,21 @@ logInFormBlock.onsubmit = function() {
         return false
     }
 
-    if(!validateEmail(emailVal)) {
+    if(validateEmail(emailVal)) {
         console.log('email not valid');
         logInFormEmail.classList.add('error');
+        
         return false;
     } else {
         logInFormEmail.classList.remove('error');
+        
     }
 
     preventDefault();
     
 }
 
-const logInButton = document.querySelector(".log-in-button")
+const logInButton = document.querySelector(".log-in-click")
 
 logInFormBlock.onchange = function() {
 
@@ -773,6 +781,7 @@ forgotBlock.onchange = function() {
 
         if (emailVal.value !== '') {
             forgotButton.classList.add("valid-form");
+
             
         } else {
             forgotButton.classList.remove("valid-form");
@@ -804,12 +813,14 @@ signUpFormBlock.onsubmit = function() {
     signUpFormInputs.forEach(function (signUpInput) {
         if (signUpInput.value === '') {
             signUpInput.classList.add("input-error")
+            signUpClick.classList.add('error-button');
             signUpInputWrappers.forEach(function (signUpInputWrapper) {
                 signUpInputWrapper.classList.add("ie")
             })
             
         } else {
             signUpInput.classList.remove("input-error");
+            signUpClick.classList.remove('error-button');
             signUpInputWrappers.forEach(function (signUpInputWrapper) {
                 signUpInputWrapper.classList.remove("ie")
             })
