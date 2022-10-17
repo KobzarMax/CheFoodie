@@ -900,6 +900,11 @@ dropButton.addEventListener('transitionend', function(drop) {
 
 // mob-nav 
 
+const featuresSection = document.querySelector("#features");
+const firstSection = document.querySelector("#first");
+const carouselSection = document.querySelector("#carousel-wrapper");
+const contactFormSection = document.querySelector("#contact-form-wrapper");
+
 function mobileScroll () {
 
     conditionsBlock.classList.remove("_conditions-active");
@@ -909,5 +914,15 @@ function mobileScroll () {
     mobileNav.classList.remove("_active");
     document.body.classList.remove("_lock");
 
+    document.querySelectorAll('.nav-list-link[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
 }
+
 
