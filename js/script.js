@@ -499,7 +499,7 @@ function sendPassActive () {
 
     setTimeout(function () {
         sendPassBlock.classList.remove("_send-pass_active");
-    }, 7000)
+    }, 3000)
 
 }
 
