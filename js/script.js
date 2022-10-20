@@ -497,10 +497,6 @@ function sendPassActive () {
 
     }
 
-    setTimeout(function () {
-        sendPassBlock.classList.remove("_send-pass_active");
-    }, 3000)
-
 }
 
 function redirectForm() {
@@ -905,6 +901,32 @@ const firstSection = document.querySelector("#first");
 const carouselSection = document.querySelector("#carousel-wrapper");
 const contactFormSection = document.querySelector("#contact-form-wrapper");
 
+const mobileNavLinks = document.querySelectorAll(".mob-link[data-to]");
+
+if (mobileNavLinks.length > 0) {
+    mobileNavLinks.forEach(mobileNavLink => {
+        mobileNavLink.addEventListener("click", onMenuLinkClick);
+    });
+
+    function onMenuLinkClick (e) {
+        const mobileLink = e.target;
+        if (mobileLink.dataset.to && document.querySelector(mobileLink.dataset.to)) {
+
+            mobileScroll();
+
+            const toBlock = document.querySelector(mobileLink.dataset.to);
+
+            const toBlockValue = toBlock.getBoundingClientRect().top + pageYOffset - headNavBlock.offsetHeight;
+
+            window.scrollTo({
+                top: toBlockValue,
+                behavior: 'smooth'
+            });
+            e.preventDefault();
+        }
+    }
+}
+
 function mobileScroll () {
 
     conditionsBlock.classList.remove("_conditions-active");
@@ -913,15 +935,6 @@ function mobileScroll () {
     burger.classList.remove("_active");
     mobileNav.classList.remove("_active");
     document.body.classList.remove("_lock");
-
-    document.querySelectorAll('.nav-list-link[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
 
 }
 
