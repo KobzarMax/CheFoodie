@@ -901,7 +901,7 @@ const firstSection = document.querySelector("#first");
 const carouselSection = document.querySelector("#carousel-wrapper");
 const contactFormSection = document.querySelector("#contact-form-wrapper");
 
-const mobileNavLinks = document.querySelectorAll(".mob-link[data-to]");
+const mobileNavLinks = document.querySelectorAll(".nav-list-link[data-to]");
 
 if (mobileNavLinks.length > 0) {
     mobileNavLinks.forEach(mobileNavLink => {
